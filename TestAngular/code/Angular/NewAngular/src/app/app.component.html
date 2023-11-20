@@ -1,0 +1,33 @@
+<mat-toolbar>
+  Facebook
+</mat-toolbar>
+
+
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+      <img class="rounded-circle mat-elevation-z8" height="80" width="80" src="../assets/image/314605019_5549325408515303_4353142863638807327_n.jpg"  >
+      <h2 class="name" style="margin-top: 5px; margin-bottom: 3px;" >Shohab Sikder</h2>
+      <p class="designation">Java Developer</p>
+      <mat-divider></mat-divider>
+      <button mat-button class="menu-button">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-button class="menu-button">
+        <mat-icon>person</mat-icon>
+        <span>Person</span>
+      </button>
+      <button mat-button class="menu-button">
+        <mat-icon>info</mat-icon>
+        <span>Info</span>
+      </button>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z4">
+        <p>Hello Shohab</p>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+<router-outlet></router-outlet>
