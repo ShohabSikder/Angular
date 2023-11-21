@@ -21,6 +21,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, EmpAddEditComponent],
@@ -44,6 +45,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -55,7 +55,7 @@ export class EmpAddEditComponent implements OnInit {
               this._dialogRef.close(true);
             },
             error: (err: any) => {
-              console.error(err);
+              console.log(err);
             },
           });
       } else {
@@ -65,7 +65,7 @@ export class EmpAddEditComponent implements OnInit {
             this._dialogRef.close(true);
           },
           error: (err: any) => {
-            console.error(err);
+            console.log(err);
           },
         });
       }
