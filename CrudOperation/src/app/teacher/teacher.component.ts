@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeacherModel } from './teacher.model';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { TeacherService } from '../service/teacher.service';
 
 
@@ -38,7 +38,23 @@ export class TeacherComponent implements OnInit {
   //   console.log('Updated hobbies:', this.hobbies);
   // }
   
+  // createHobby(name: string, checked: boolean): FormGroup {
+  //   return this.formBuilder.group({
+  //     name: [name],
+  //     checked: [checked]
+  //   });
+  // }
 
+  // get hobby(): FormArray {
+  //   return this.formValue.get('hobbies') as FormArray;
+  // }
+
+ 
+
+  // onSubmit(): void {
+  //   // Handle form submission - access form values using this.formValue.value
+  //   console.log('Form submitted:', this.formValue.value);
+  // }
 
 
   constructor(private teacher:TeacherService,private formBuilder:FormBuilder){
