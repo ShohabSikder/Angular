@@ -3,7 +3,7 @@ export class TeacherModel{
    name!:string;
    department!:string;
    gender!:string;
-   hobby!:string;
+   hobby !: string[];
 
 
 }

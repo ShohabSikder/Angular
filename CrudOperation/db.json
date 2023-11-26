@@ -1,32 +1,16 @@
 {
   "teacher": [
     {
-      "id": 2,
       "name": "Taskin Hasan",
-      "department": "Bangla",
-      "gender": "male",
-      "hobby": ""
-    },
-    {
-      "name": "Shohab",
-      "department": "Math",
-      "gender": "male",
-      "hobby": "",
-      "id": 3
-    },
-    {
-      "name": "Shohab Sikder",
       "department": "English",
       "gender": "male",
-      "hobby": "",
-      "id": 4
-    },
-    {
-      "name": "Shohab",
-      "department": "English",
-      "gender": "male",
-      "hobby": false,
-      "id": 5
+      "hobby": [
+        "Reading",
+        "Sports",
+        "Travelling",
+        "Riding"
+      ],
+      "id": 1
     }
   ],
   "comments": [

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TeacherModel } from './teacher.model';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import {  FormBuilder, FormGroup } from '@angular/forms';
 import { TeacherService } from '../service/teacher.service';
+
 
 
 
@@ -17,46 +18,26 @@ export class TeacherComponent implements OnInit {
   teacherModel : TeacherModel=new TeacherModel();
   formValue!: FormGroup;
   teacherData: any;
-  // hobby: string[] = [
-  //   'Reading',
-  //   'Gardening',
-  //   'Cooking',
-   
-  // ];
+  selectedHobbies: string[] = [];
 
-  // hobbies: { name: string, checked: boolean }[] = [
-  //   { name: 'Reading', checked: false },
-  //   { name: 'Gardening', checked: false },
-  //   { name: 'Cooking', checked: false },
-  //   // Add more hobbies as needed
-  // ];
+  onHobbyChange(event: any, hobby: string) {
+    if (event.target.checked) {
+      // Add the hobby to the selectedHobbies array if it's checked
+      this.selectedHobbies.push(hobby);
+    } else {
+      // Remove the hobby from the selectedHobbies array if it's unchecked
+      const index = this.selectedHobbies.indexOf(hobby);
+      if (index !== -1) {
+        this.selectedHobbies.splice(index, 1);
+      }
+    }
+  }
 
-  // // Function to handle checkbox changes
-  // onHobbyChange(index: number) {
-  //   this.hobbies[index].checked = !this.hobbies[index].checked;
-  //   // Log the updated hobbies to verify
-  //   console.log('Updated hobbies:', this.hobbies);
-  // }
+  isHobbySelected(hobby: string): boolean {
+    return this.selectedHobbies.includes(hobby);
+  }
+
   
-  // createHobby(name: string, checked: boolean): FormGroup {
-  //   return this.formBuilder.group({
-  //     name: [name],
-  //     checked: [checked]
-  //   });
-  // }
-
-  // get hobby(): FormArray {
-  //   return this.formValue.get('hobbies') as FormArray;
-  // }
-
- 
-
-  // onSubmit(): void {
-  //   // Handle form submission - access form values using this.formValue.value
-  //   console.log('Form submitted:', this.formValue.value);
-  // }
-
-
   constructor(private teacher:TeacherService,private formBuilder:FormBuilder){
 
     
@@ -69,19 +50,21 @@ export class TeacherComponent implements OnInit {
       department: [''],
       gender: [''],
       hobby:['']
+      
     });
+  
 
     this.getAll();
   }
 
-  
+    
   saveTeacher() {
 
     
     this.teacherModel.name = this.formValue.value.name;
     this.teacherModel.department = this.formValue.value.department;
     this.teacherModel.gender = this.formValue.value.gender;
-    this.teacherModel.hobby = this.formValue.value.hobby;
+    this.teacherModel.hobby = this.selectedHobbies;
 
     this.teacher.teacherPost(this.teacherModel)
       .subscribe(res => {
@@ -128,13 +111,13 @@ export class TeacherComponent implements OnInit {
     this.formValue.controls['gender'].setValue(row.gender);
     this.formValue.controls['hobby'].setValue(row.hobby);
     }
-    
+
 
     TeacherEdit(){
     this.teacherModel.name = this.formValue.value.name;
     this.teacherModel.department = this.formValue.value.department;
     this.teacherModel.gender = this.formValue.value.gender;
-    this.teacherModel.hobby = this.formValue.value.hobby;
+    this.teacherModel.hobby = this.selectedHobbies;
    
   
       this.teacher.editTeacher(this.teacherModel.id, this.teacherModel)

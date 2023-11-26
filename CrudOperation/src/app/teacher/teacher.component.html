@@ -7,31 +7,32 @@
 
 <div class="container">
   <table class="table table-striped text-center">
-      <thead>
-          <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Department</th>
-              <th>Gender</th>
-              <th>Hobby</th>
-              <th>Action</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let row of teacherData">
-              <td>{{row.id}}</td>
-              <td>{{row.name}}</td>
-              <td>{{row.department}}</td>
-              <td>{{row.gender}}</td>
-              <td>{{row.hobby}}</td>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Gender</th>
+        <th>Hobby</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of teacherData">
+        <td>{{row.id}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.department}}</td>
+        <td>{{row.gender}}</td>
+        <td>{{row.hobby}}</td>
 
-              <td>
-                  <button class="btn btn-warning mx-1" (click)="onEdite(row)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-                  <button class="btn btn-danger mx-1" (click)="deleteTeacher(row)">Delete</button>
-              </td>
+        <td>
+          <button class="btn btn-warning mx-1" (click)="onEdite(row)" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Edit</button>
+          <button class="btn btn-danger mx-1" (click)="deleteTeacher(row)">Delete</button>
+        </td>
 
-          </tr>
-      </tbody>
+      </tr>
+    </tbody>
 
   </table>
 </div>
@@ -60,7 +61,7 @@
             <div class="row">
               <div class="mb-3">
                 <label class="form-label">Department</label>
-                <select class="form-select" aria-label="Default select example" formControlName="department"  >
+                <select class="form-select" aria-label="Default select example" formControlName="department">
                   <option selected>Open this select menu</option>
                   <option value="Bangla">Bangla</option>
                   <option value="English">English</option>
@@ -71,8 +72,8 @@
 
             <div class="row">
               <label class="form-label">Gender</label>
-              <mat-radio-group aria-label="Select an option" formControlName="gender" >
-                <mat-radio-button value="male" >Male</mat-radio-button>
+              <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-radio-button value="male">Male</mat-radio-button>
                 <mat-radio-button value="female">Female</mat-radio-button>
               </mat-radio-group>
             </div>
@@ -100,15 +101,29 @@
                 <p><mat-checkbox formControlName="mushroom">Mushroom</mat-checkbox></p>
               </section> -->
 
+              <!-- Modify your checkbox inputs to bind to a method (e.g., onHobbyChange) -->
+              <div class="container row">
+                <label class="form-label">Hobby</label>
+                <input type="checkbox" (change)="onHobbyChange($event, 'Reading')" [checked]="isHobbySelected('Reading')">
+                Reading
+                <input type="checkbox" (change)="onHobbyChange($event, 'Sports')" [checked]="isHobbySelected('Sports')">
+                Sports
+                <input type="checkbox" (change)="onHobbyChange($event, 'Travelling')" [checked]="isHobbySelected('Travelling')">
+                Travelling
+                <input type="checkbox" (change)="onHobbyChange($event, 'Riding')" [checked]="isHobbySelected('Riding')">
+                Riding
+              </div>
+              <!-- Add other checkboxes for different hobbies -->
+
 
 
             </div>
           </form>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-success" (click)="saveTeacher()" >Save</button>
+            <button type="button" class="btn btn-success" (click)="saveTeacher()">Save</button>
             <button type="button" class="btn btn-primary" (click)="TeacherEdit()">Update</button>
-        </div>
+          </div>
         </div>
       </div>
     </div>
