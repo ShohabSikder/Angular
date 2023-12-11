@@ -5,7 +5,7 @@ import { StoreModule } from "./store/store.module";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreComponent } from './store/store.component';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { StaticDataSource } from '../model/static.datasource';
 import { ProductRepository } from '../model/product.repository';
 import { CheckoutComponent } from './store/checkout.component';
@@ -66,10 +66,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     
   // ],
   providers: [
-    provideHttpClient(),
+    provideHttpClient(
+      withFetch()
+    ),
     StaticDataSource,
     ProductRepository,
     StoreFirstGuard,
+    
 
   ],
   bootstrap: [AppComponent]
