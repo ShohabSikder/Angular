@@ -1,0 +1,46 @@
+{
+  "employee": [
+    {
+      "firstName": "Taskin",
+      "lastName": "Hasan",
+      "email": "taskinhasan@gmail.com",
+      "department": "Finance",
+      "gender": "male",
+      "contact": "252552",
+      "salary": "50000",
+      "id": 1
+    },
+    {
+      "firstName": "Taskin",
+      "lastName": "Hasan",
+      "email": "shohab4057@gmail.com",
+      "department": "Marketing",
+      "gender": "male",
+      "contact": "45245",
+      "salary": "52222",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "attendance": [
+    {
+      "firstName":"",
+      "contact":  " "  , 
+      "attendanceDate": "",
+      "inTime": "",
+      "outTime": "",
+      "isFullDay": "",
+      "attendanceId": ""
+  
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

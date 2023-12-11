@@ -1,0 +1,111 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                    <div class="col-6 text-white">
+                        Employee Details
+                    </div>
+                    <div class="col-6 text-right">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead class="text-center">
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Contact</th>
+                            <th>Attendance Date</th>
+                            <th>In time</th>
+                            <th>Out Time</th>
+                            <th></th>
+                            <th>Is full day</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of attendanceArray">
+                            <td>{{row.attendanceId}}</td>
+                            <td>{{row.firstName}}</td>
+                            <td>{{row.contact}}</td>
+                            <td>{{row.attendanceDate}}</td>
+                            <td>{{row.inTime}}</td>
+                            <td>{{row.outTime}}</td>
+                            <td>{{row.isFullDay}}</td>
+                            
+
+                            <td>
+                                <button class="btn btn-warning mx-1" (click)="onEdite(row)">Edit</button>
+                                <button class="btn btn-danger mx-1" (click)="deleteEmployee(row)">Delete</button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                    <div class="col-6 text-white">
+                        New Employee
+                    </div>
+                    <!-- If needed content for the right side -->
+                    <div class="col-6 text-right">
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="formValue">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="firstName">Select Employee</label>
+                            <select name="" [(ngModel)]="attendanceObj.id">
+                                <option *ngFor="let emp of employeeArray" value="emp.id">{{emp.firstName}}</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Contact/label>
+                            <input type="text" class="form-control" formControlName="contact" [(ngModel)]="attendanceObj.contact">
+                        </div>
+                        
+                        <div class="col-6">
+                            <label for="">attendanceDate</label>
+                            <input type="date" class="form-control" formControlName="attendanceDate" [(ngModel)]="attendanceObj.attendanceDate">
+                        </div>
+                        <div class="col-6">
+                            <label for="">In time</label>
+                            <input type="time" class="form-control" formControlName="inTime" [(ngModel)]="attendanceObj.inTime">
+                        </div>
+                        <div class="col-6">
+                            <label for="">out time time</label>
+                            <input type="time" class="form-control" formControlName="outTime" [(ngModel)]="attendanceObj.outTime">
+                        </div>
+                        <div class="col-6">
+                            <label for="">out time time</label>
+                            <input type="checkbox" class="form-control" formControlName="time" [(ngModel)]="attendanceObj.outTime">
+                        </div>
+                        
+                     
+                    <div class="row">
+                        <div class="col-6 text-center pt-3">
+                            <button class="btn btn-secondary btn-sm" (click)=" resetForm()">Reset</button>
+                        </div>
+                        <div class="col-6 text-center pt-3">
+                            <button class="btn btn-success btn-sm" (click)="saveEmployee()">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+

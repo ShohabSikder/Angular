@@ -1,0 +1,120 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                    <div class="col-6 text-white">
+                        Employee Details
+                    </div>
+                    <div class="col-6 text-right">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead class="text-center">
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Department</th>
+                            <th>Gender</th>
+                            <th>Salary</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of employeeData">
+                            <td>{{row.id}}</td>
+                            <td>{{row.firstName}}</td>
+                            <td>{{row.lastName}}</td>
+                            <td>{{row.email}}</td>
+                            <td>{{row.contact}}</td>
+                            <td>{{row.department}}</td>
+                            <td>{{row.gender}}</td>
+                            <td>{{row.salary}}</td>
+
+                            <td>
+                                <button class="btn btn-warning mx-1" (click)="onEdite(row)">Edit</button>
+                                <button class="btn btn-danger mx-1" (click)="deleteEmployee(row)">Delete</button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                    <div class="col-6 text-white">
+                        New Employee
+                    </div>
+                    <!-- If needed content for the right side -->
+                    <div class="col-6 text-right">
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="formValue">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" formControlName="firstName">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Last Name</label>
+                            <input type="text" class="form-control" formControlName="lastName">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Gender</label>
+                            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                            <mat-radio-button value="male">Male</mat-radio-button>
+                            <mat-radio-button value="female">Female</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" formControlName="email">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Contact</label>
+                            <input type="text" class="form-control" formControlName="contact">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Department</label>
+                            <select class="form-select" aria-label="Default select example"
+                                formControlName="department">
+                                <option selected>Open this select menu</option>
+                                <option value="Accountant">Accountant</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Finance">Finance</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label >Salary</label>
+                            <input type="text" class="form-control" formControlName="salary">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-center pt-3">
+                            <button class="btn btn-secondary btn-sm" (click)=" resetForm()">Reset</button>
+                        </div>
+                        <div class="col-6 text-center pt-3">
+                            <button class="btn btn-success btn-sm" (click)="saveEmployee()">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
