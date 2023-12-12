@@ -4,7 +4,7 @@
             <div class="card-header bg-primary">
                 <div class="row">
                     <div class="col-6 text-white">
-                        Employee Details
+                        Attendnace Details
                     </div>
                     <div class="col-6 text-right">
 
@@ -17,29 +17,25 @@
                         <tr>
                             <th>ID</th>
                             <th>First Name</th>
-                            <th>Contact</th>
-                            <th>Attendance Date</th>
-                            <th>In time</th>
+                            <th>In Time</th>
                             <th>Out Time</th>
-                            <th></th>
-                            <th>Is full day</th>
+                            <th>Date</th>
+
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let row of attendanceArray">
+                        <tr *ngFor="let row of attendanceData">
                             <td>{{row.attendanceId}}</td>
                             <td>{{row.firstName}}</td>
-                            <td>{{row.contact}}</td>
-                            <td>{{row.attendanceDate}}</td>
                             <td>{{row.inTime}}</td>
-                            <td>{{row.outTime}}</td>
-                            <td>{{row.isFullDay}}</td>
-                            
+                            <td>{{row.ouTime}}</td>
+                            <td>{{row.date}}</td>
+
 
                             <td>
                                 <button class="btn btn-warning mx-1" (click)="onEdite(row)">Edit</button>
-                                <button class="btn btn-danger mx-1" (click)="deleteEmployee(row)">Delete</button>
+                                <button class="btn btn-danger mx-1" (click)="deleteAttendance(row)">Delete</button>
                             </td>
 
                         </tr>
@@ -56,7 +52,7 @@
             <div class="card-header bg-primary">
                 <div class="row">
                     <div class="col-6 text-white">
-                        New Employee
+                        Attendnace
                     </div>
                     <!-- If needed content for the right side -->
                     <div class="col-6 text-right">
@@ -68,44 +64,34 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6">
-                            <label for="firstName">Select Employee</label>
-                            <select name="" [(ngModel)]="attendanceObj.id">
-                                <option *ngFor="let emp of employeeArray" value="emp.id">{{emp.firstName}}</option>
-                            </select>
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" formControlName="firstName">
                         </div>
                         <div class="col-6">
-                            <label for="">Contact/label>
-                            <input type="text" class="form-control" formControlName="contact" [(ngModel)]="attendanceObj.contact">
-                        </div>
-                        
-                        <div class="col-6">
-                            <label for="">attendanceDate</label>
-                            <input type="date" class="form-control" formControlName="attendanceDate" [(ngModel)]="attendanceObj.attendanceDate">
+                            <label for="">In Time</label>
+                            <input type="time" class="form-control" formControlName="inTime">
                         </div>
                         <div class="col-6">
-                            <label for="">In time</label>
-                            <input type="time" class="form-control" formControlName="inTime" [(ngModel)]="attendanceObj.inTime">
+                            <label for="">Out Time</label>
+                            <input type="time" class="form-control" formControlName="outTime">
                         </div>
                         <div class="col-6">
-                            <label for="">out time time</label>
-                            <input type="time" class="form-control" formControlName="outTime" [(ngModel)]="attendanceObj.outTime">
+                            <label for="">Date</label>
+                            <input type="date" class="form-control" formControlName="date">
                         </div>
-                        <div class="col-6">
-                            <label for="">out time time</label>
-                            <input type="checkbox" class="form-control" formControlName="time" [(ngModel)]="attendanceObj.outTime">
-                        </div>
-                        
-                     
+                    </div>
+
                     <div class="row">
                         <div class="col-6 text-center pt-3">
-                            <button class="btn btn-secondary btn-sm" (click)=" resetForm()">Reset</button>
+                            <button class="btn btn-secondary btn-sm" (click)="resetForm()">Reset</button>
                         </div>
                         <div class="col-6 text-center pt-3">
-                            <button class="btn btn-success btn-sm" (click)="saveEmployee()">Save</button>
+                            <button class="btn btn-success btn-sm" (click)="attendanceSave()">Save</button>
                         </div>
                     </div>
                 </div>
+
             </form>
         </div>
     </div>
-
+</div>
