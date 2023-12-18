@@ -4,7 +4,7 @@
             <div class="card-header bg-primary">
                 <div class="row">
                     <div class="col-6 text-white">
-                        Attendnace Details
+                        Attendance Details
                     </div>
                     <div class="col-6 text-right">
 
@@ -25,11 +25,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let row of attendanceData">
-                            <td>{{row.attendanceId}}</td>
+                        <tr *ngFor="let row of attendanceData let i=index">
+                            <td>{{i+1}}</td>
                             <td>{{row.firstName}}</td>
                             <td>{{row.inTime}}</td>
-                            <td>{{row.ouTime}}</td>
+                            <td>{{row.outTime}}</td>
                             <td>{{row.date}}</td>
 
 
@@ -52,7 +52,7 @@
             <div class="card-header bg-primary">
                 <div class="row">
                     <div class="col-6 text-white">
-                        Attendnace
+                        Attendance
                     </div>
                     <!-- If needed content for the right side -->
                     <div class="col-6 text-right">
@@ -65,7 +65,19 @@
                     <div class="row">
                         <div class="col-6">
                             <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" formControlName="firstName">
+                            <!-- <input type="text" class="form-control" formControlName="firstName"> -->
+                           <!-- <div >
+                            <select formControlName="firstName" id="" *ngFor="let emp of employeeData">
+                                <option value="emp.firstName">{{emp.firstName}}</option>
+                                
+                            </select>
+                           </div> -->
+
+                           <div>
+                            <select formControlName="firstName" id="firstName">
+                              <option *ngFor="let emp of employeeData" [value]="emp.firstName">{{ emp.firstName }}</option>
+                            </select>
+                          </div>
                         </div>
                         <div class="col-6">
                             <label for="">In Time</label>
@@ -87,6 +99,7 @@
                         </div>
                         <div class="col-6 text-center pt-3">
                             <button class="btn btn-success btn-sm" (click)="attendanceSave()">Save</button>
+                            
                         </div>
                     </div>
                 </div>

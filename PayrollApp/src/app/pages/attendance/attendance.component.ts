@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AttendanceModel } from './attendance.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AttendanceService } from '../../service/attendance.service';
+import { EmployeeService } from '../../service/employee.service';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class AttendanceComponent implements OnInit {
   attendanceModel :AttendanceModel=new AttendanceModel();
   formValue!:FormGroup;
   attendanceData: any;
-  constructor(private attendance:AttendanceService,private formBuilder:FormBuilder){
+  employeeData:any;
+  constructor(private attendance:AttendanceService,private formBuilder:FormBuilder,private emp:EmployeeService){
   }
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class AttendanceComponent implements OnInit {
   });
 
   this.getAll();
+  this.getAllEmp();
   }
 
 attendanceSave(){
@@ -55,7 +58,7 @@ attendanceSave(){
     })
   }
   deleteAttendance(row:any){
-    this.attendance.deleteAttendance(row.attendanceId)
+    this.attendance.deleteAttendance(row.id)
     .subscribe(res => {
       console.log(res);
       alert("attendance Deleted")
@@ -71,7 +74,7 @@ attendanceSave(){
 
   }
   onEdite(row: any) {
-    this.attendanceModel.attendanceId=row.attendanceId;
+    this.attendanceModel.id=row.attendanceId;
     this.formValue.controls['firstName'].setValue(row.firstName);
     this.formValue.controls['inTime'].setValue(row.inTime);
     this.formValue.controls['outTime'].setValue(row.outTime);
@@ -86,7 +89,7 @@ attendanceSave(){
     
  
 
-    this.attendance.editAttendance(this.attendanceModel.attendanceId, this.attendanceModel)
+    this.attendance.editAttendance(this.attendanceModel.id, this.attendanceModel)
     .subscribe(res => {
       console.log(res);
       alert("Attendnace Updated")
@@ -104,6 +107,14 @@ attendanceSave(){
   resetForm() {
     this.formValue.reset(); // Resets form fields to their initial empty state
   }
+
+  getAllEmp(){
+    this.emp.getAllEmployee().subscribe(res => {
+      console.log(res);
+      this.employeeData=res
+  })
+}
+
 }
 
 

@@ -95,7 +95,7 @@ export class EmployeeComponent implements OnInit {
     }
 
 
-    EmployeeEdit(){
+    employeeEdit(){
       this.employeeModel.firstName = this.formValue.value.firstName;
       this.employeeModel.lastName = this.formValue.value.lastName;
       this.employeeModel.email = this.formValue.value.email;
