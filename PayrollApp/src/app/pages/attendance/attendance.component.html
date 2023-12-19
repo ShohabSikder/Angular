@@ -20,7 +20,6 @@
                             <th>In Time</th>
                             <th>Out Time</th>
                             <th>Date</th>
-
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -34,7 +33,7 @@
 
 
                             <td>
-                                <button class="btn btn-warning mx-1" (click)="onEdite(row)">Edit</button>
+                                <button class="btn btn-warning mx-1" (click)="onEdit(row)">Edit</button>
                                 <button class="btn btn-danger mx-1" (click)="deleteAttendance(row)">Delete</button>
                             </td>
 
@@ -98,8 +97,12 @@
                             <button class="btn btn-secondary btn-sm" (click)="resetForm()">Reset</button>
                         </div>
                         <div class="col-6 text-center pt-3">
+<<<<<<< Updated upstream
                             <button class="btn btn-success btn-sm" (click)="attendanceSave()">Save</button>
                             
+=======
+                            <button class="btn btn-success btn-sm" (click)="saveAttendance()">Save</button>
+>>>>>>> Stashed changes
                         </div>
                     </div>
                 </div>

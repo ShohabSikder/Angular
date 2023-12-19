@@ -30,7 +30,7 @@ export class AttendanceComponent implements OnInit {
   this.getAllEmp();
   }
 
-attendanceSave(){
+saveAttendance(){
   this.attendanceModel.firstName = this.formValue.value.firstName;
     this.attendanceModel.inTime = this.formValue.value.inTime;
     this.attendanceModel.outTime = this.formValue.value.outTime;
@@ -73,8 +73,13 @@ attendanceSave(){
     )
 
   }
+<<<<<<< Updated upstream
   onEdite(row: any) {
     this.attendanceModel.id=row.attendanceId;
+=======
+  onEdit(row: any) {
+    this.attendanceModel.attendanceId=row.attendanceId;
+>>>>>>> Stashed changes
     this.formValue.controls['firstName'].setValue(row.firstName);
     this.formValue.controls['inTime'].setValue(row.inTime);
     this.formValue.controls['outTime'].setValue(row.outTime);

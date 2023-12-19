@@ -4,6 +4,7 @@
       "id": 1,
       "firstName": "Shohab",
       "lastName": "Hasan",
+<<<<<<< Updated upstream
       "email": "taskinhasan@gmail.com",
       "department": "Finance",
       "gender": "male",
@@ -13,23 +14,29 @@
     {
       "firstName": "Taskin",
       "lastName": "Ahmed",
+=======
+>>>>>>> Stashed changes
       "email": "shohab4057@gmail.com",
       "department": "Accountant",
       "gender": "male",
       "contact": "016636552",
       "salary": "125252",
       "id": 2
-    }
-  ],
-  "comments": [
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "firstName": "Taskin",
+      "lastName": "Hasan",
+      "email": "taskinhasan@gmail.com",
+      "department": "Manager",
+      "gender": "male",
+      "contact": "56353",
+      "salary": "453453",
+      "id": 3
     }
   ],
   "attendance": [
     {
+<<<<<<< Updated upstream
       "firstName": "Shohab",
       "inTime": "15:39",
       "outTime": "15:39",
@@ -42,8 +49,16 @@
       "outTime": "12:45",
       "date": "2023-12-20",
       "id": 2
+=======
+      "firstName": "",
+      "date": "",
+      "inTime": "",
+      "outTime": "",
+      "attendanceId": ""
+>>>>>>> Stashed changes
     }
   ],
+ 
   "profile": {
     "name": "typicode"
   }
