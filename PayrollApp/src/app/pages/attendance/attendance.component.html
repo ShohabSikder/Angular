@@ -65,18 +65,19 @@
                         <div class="col-6">
                             <label for="firstName">First Name</label>
                             <!-- <input type="text" class="form-control" formControlName="firstName"> -->
-                           <!-- <div >
+                            <!-- <div >
                             <select formControlName="firstName" id="" *ngFor="let emp of employeeData">
                                 <option value="emp.firstName">{{emp.firstName}}</option>
                                 
                             </select>
                            </div> -->
 
-                           <div>
-                            <select formControlName="firstName" id="firstName">
-                              <option *ngFor="let emp of employeeData" [value]="emp.firstName">{{ emp.firstName }}</option>
-                            </select>
-                          </div>
+                            <div>
+                                <select formControlName="firstName" id="firstName">
+                                    <option *ngFor="let emp of employeeData" [value]="emp.firstName">{{ emp.firstName }}
+                                    </option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-6">
                             <label for="">In Time</label>
@@ -93,16 +94,18 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-6 text-center pt-3">
+                        <div class="col-4 text-center pt-3">
                             <button class="btn btn-secondary btn-sm" (click)="resetForm()">Reset</button>
                         </div>
-                        <div class="col-6 text-center pt-3">
-<<<<<<< Updated upstream
-                            <button class="btn btn-success btn-sm" (click)="attendanceSave()">Save</button>
-                            
-=======
+                        <div class="col-4 text-center pt-3">
+
                             <button class="btn btn-success btn-sm" (click)="saveAttendance()">Save</button>
->>>>>>> Stashed changes
+                            
+                        </div>
+                        <div class="col-4 text-center pt-3">
+
+                            <button class="btn btn-warning btn-sm" (click)="AttendanceEdit()">Update</button>
+                            
                         </div>
                     </div>
                 </div>

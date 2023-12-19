@@ -73,13 +73,11 @@ saveAttendance(){
     )
 
   }
-<<<<<<< Updated upstream
-  onEdite(row: any) {
-    this.attendanceModel.id=row.attendanceId;
-=======
+
+
   onEdit(row: any) {
-    this.attendanceModel.attendanceId=row.attendanceId;
->>>>>>> Stashed changes
+    this.attendanceModel.id=row.id;
+
     this.formValue.controls['firstName'].setValue(row.firstName);
     this.formValue.controls['inTime'].setValue(row.inTime);
     this.formValue.controls['outTime'].setValue(row.outTime);

@@ -17,6 +17,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { AllLeavesComponent } from './pages/allLeaves/all-leaves/all-leaves.component';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -34,6 +35,7 @@ import { AllLeavesComponent } from './pages/allLeaves/all-leaves/all-leaves.comp
     LoginComponent,
     SalaryComponent,
     AllLeavesComponent,
+    FilterPipe,
    
     
     
