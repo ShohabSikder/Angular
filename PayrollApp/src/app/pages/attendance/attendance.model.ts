@@ -1,7 +1,9 @@
+import { Time } from "@angular/common";
+
 export class AttendanceModel{
     id:number=0;
     firstName!:string;
-    inTime!:string;
-    outTime!:string;
-    date!: string;
+    inTime!:Time;
+    outTime!:Time;
+    date!: Date;
 }

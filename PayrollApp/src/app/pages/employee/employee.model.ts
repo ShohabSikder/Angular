@@ -7,5 +7,6 @@ export class EmployeeModel{
     email!:string;
     salary!:number;
     department!:string;
+    
 
 }

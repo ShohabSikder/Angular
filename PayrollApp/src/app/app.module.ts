@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { AllLeavesComponent } from './pages/allLeaves/all-leaves/all-leaves.component';
+
 
 
 
@@ -31,6 +33,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     LeavesComponent,
     LoginComponent,
     SalaryComponent,
+    AllLeavesComponent,
+   
     
     
   
