@@ -8,6 +8,7 @@ import { EmployeeComponent } from './pages/employee/employee.component';
 import { LeavesComponent } from './pages/leaves/leaves.component';
 import { SalaryComponent } from './pages/salary/salary.component';
 import { AdvanceComponent } from './pages/advance/advance.component';
+import { AllLeavesComponent } from './pages/allLeaves/all-leaves/all-leaves.component';
 
 const routes: Routes = [
   {path:"",
@@ -26,6 +27,7 @@ children:[
   {path:"leaves",component:LeavesComponent},
   {path:"salary",component:SalaryComponent},
   {path:"advance",component:AdvanceComponent},
+  {path:"allleaves",component:AllLeavesComponent},
 ]
 
 }
